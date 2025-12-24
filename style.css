@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    position: relative; /* 추가 */
+}
+
+.login-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #6a5acd;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-btn:hover {
+    background-color: #5a4bbf;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+#add-todo-btn {
+    background-color: #6a5acd; /* 보라색 계열 */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-todo-btn:hover {
+    background-color: #5a4bbf;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#todo-list li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+#todo-list li.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#todo-list li .todo-text {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.todo-author {
+    font-size: 12px;
+    color: #777;
+    margin-left: auto; /* 작성자 정보를 오른쪽으로 정렬 */
+    margin-right: 10px;
+}
+
+#todo-list li .actions {
+    display: flex;
+    align-items: center;
+}
+
+#todo-list li .checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#todo-list li.completed .checkbox {
+    background-color: #6a5acd;
+    border-color: #6a5acd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#todo-list li.completed .checkbox::before {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    line-height: 1;
+}
+
+
+#todo-list li .delete-btn {
+    background-color: transparent;
+    color: #cc0000;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+#todo-list li .delete-btn:hover {
+    color: #ff0000;
+}
+
+/* 별표 버튼 스타일 */
+#todo-list li .star-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #ccc; /* 기본 별 색상 */
+}
+
+#todo-list li.starred .star-btn {
+    color: #ffd700; /* 별표된 할일의 노란색 */
+}
+
+/* 별표된 할일이 최상단으로 오도록 스타일링 (JavaScript로 정렬하지만 시각적 강조 가능) */
+#todo-list li.starred {
+    order: -1; /* Flexbox order 속성을 사용하여 최상단으로 이동 */
+    border-color: #ffd700;
+    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
+}
+
+#clear-all-btn {
+    background-color: #e67e22; /* 주황색 계열 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#clear-all-btn:hover {
+    background-color: #d35400;
+}
